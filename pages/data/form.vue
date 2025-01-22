@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-data">
         <div class="card mt-5">
             <img src=".././../assets/logo1.png" alt="" class="logo mt-4">
             <h2 class="mt-2"><b>DAFTAR PKL</b></h2>
@@ -9,14 +9,23 @@
                 <input type="text" class="form-control form-control-lg rounded-5" />
             </div>
             <div class=" form-group mb-3">
-                <label for="exampleInputName" class="form-label">Nama</label>
+                <label for="exampleInputName" class="form-label">Jurusan</label>
                 <input type="text" class="form-control form-control-lg rounded-5" />
             </div>
             <div class=" form-group mb-3">
-                <label for="exampleInputName" class="form-label">Nama</label>
+                <label for="exampleInputName" class="form-label">Sekolah</label>
                 <input type="text" class="form-control form-control-lg rounded-5" />
             </div>
-            <button id="submit-btn">KIRIM</button>
+            <div class=" form-group mb-3">
+                <label for="exampleInputName" class="form-label">Awal PKL</label>
+                <input type="date" class="form-control form-control-lg rounded-5" />
+            </div>
+            <div class=" form-group mb-3">
+                <label for="exampleInputName" class="form-label">Akhir PKL</label>
+                <input type="date" class="form-control form-control-lg rounded-5" />
+            </div>
+            <nuxt-link to="/data/riwayat/"><button id="submit-btn" class="rounded-2 shadow">KIRIM</button></nuxt-link>
+            
         </div>
     </div>
 </template>
@@ -28,9 +37,10 @@
 
 .card{
     width: 500px;
-    height: 400px;
-    margin-left: 270px;
+    height: 750px;
+    margin-left: 300px;
     border: 3px solid #7f898b;
+    align-content: center;
     /* justify-content: center; */
 }
 
@@ -40,6 +50,11 @@ h2{
     font-style: normal;
     font-weight: bold;
     margin-left: 150px;
+}
+
+.btn{
+    width: 45px;
+    background-color: #7f898b;
 }
 
 .form-group{

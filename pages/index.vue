@@ -24,7 +24,7 @@
                     </svg>
                 </div>
                 <div class="col-4 text">
-                    <nuxt-link to="/data/form"><h2><b>Presensi PKL</b></h2></nuxt-link>
+                    <nuxt-link to="/presensi/"><h2><b>Presensi PKL</b></h2></nuxt-link>
                 </div>
             </div>
         </div>
