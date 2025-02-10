@@ -9,7 +9,7 @@
                     </svg>
                 </div>
                 <div class="col-5">
-                    <nuxt-link to="/data/form"><h2><b>Catatan Data PKL</b></h2></nuxt-link>
+                    <nuxt-link to="/data/form1"><h2><b>Catatan Data PKL</b></h2></nuxt-link>
                 </div>
             </div>
         </div>
