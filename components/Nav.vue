@@ -5,8 +5,8 @@
             <img src="../assets/logo1.png" alt="" style="width: 100px;" class="img"/>
         </div>
         <div class="col-lg-4 col-md-9 col-sm-10 col-12 d-flex align-items-center flex-column pt-3 text-start">
-            <h2>PERPUS DIGITAL</h2>
-            <address>SMKN 4 TASIKMALAYA</address>
+            <h4>DATA PRESENSI PKL</h4>
+            <address>LP3i KOTA TASIKMALAYA</address>
         </div>
         </div>
     </div>
@@ -14,10 +14,11 @@
   
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap");
-h2 {
+h4 {
   font-family: "Inknut Antiqua", serif;
   font-weight: 400;
   font-style: normal;
+  margin-top: 8px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
