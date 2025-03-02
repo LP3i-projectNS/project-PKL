@@ -1,11 +1,28 @@
+<script setup>
+const route = useRoute()
+const router = useRouter()
+
+const hiddenRoutes = ['login']
+
+const shouldShowNavbar = !hiddenRoutes.includes(route.name)
+
+const isActive = ref('home');
+
+const setActive = (tab) => {
+  isActive.value = tab;
+};
+
+</script>
+
+
 <template>
-    <div class="container nav">
-        <div class="row d-flex justify-content-center m-0" style="background-color: #bfdeeb; width: 100%; right: 0">
+    <div v-if="route?.name != 'login'" class="container-fluid p-0 nav">
+        <div class="row justify-content-center m-0" style="background-color: #bfdeeb; width: 100%; right: 0">
         <div class="col-lg-1 col-md-2 col-sm-3 col-3">
             <img src="../assets/logo1.png" alt="" style="width: 100px;" class="img"/>
         </div>
-        <div class="col-lg-4 col-md-9 col-sm-10 col-12 d-flex align-items-center flex-column pt-3 text-start">
-            <h4>DATA PRESENSI PKL</h4>
+        <div class="col-lg-4 col-md-9 col-sm-10 col-12 d-flex flex-column pt-3 text-start">
+            <h4>PRESENSI PKL</h4>
             <address>LP3i KOTA TASIKMALAYA</address>
         </div>
         </div>

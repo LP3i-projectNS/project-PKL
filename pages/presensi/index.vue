@@ -1,3 +1,11 @@
+<script setup>
+definePageMeta({
+    layout: 'admin',
+    middleware: 'auth'
+})
+
+</script>
+
 <template>
     <!DOCTYPE html>
         <div class="container">

@@ -1,3 +1,11 @@
+<script>
+definePageMeta({
+    layout: 'admin',
+    middleware: 'auth'
+})
+
+</script>
+
 <template>
     <div class="container">
         <nuxt-link to="/data/form1">

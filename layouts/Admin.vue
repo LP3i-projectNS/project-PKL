@@ -1,7 +1,8 @@
 <template>
     <div>
-        <Nav />
+        <NavAdmin />
 
         <slot />
     </div>
+
 </template>
