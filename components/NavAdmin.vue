@@ -61,8 +61,8 @@ h2, h5, .btn, .modal {
 
 .btn-batal {
     width: 100px;
-    color: white;
-    background-color: #D8C7A6;
+    color: rgb(0, 0, 0);
+    background-color: #DEEAEF;
 }
 
 .text-end {

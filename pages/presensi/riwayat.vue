@@ -19,6 +19,11 @@ const filterPresensi = computed(() => {
 
 onMounted(() => getPresensi())
 
+
+definePageMeta({
+    layout: 'admin',
+    middleware: 'auth'
+})
 </script>
 
 <template>

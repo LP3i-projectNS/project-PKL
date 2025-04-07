@@ -1,53 +1,69 @@
-<script>
+<script setup>
+const supabase = useSupabaseClient()
+const students = ref ([])
+const keyword = ref('')
+
+const getStudent = async () => {
+  const { data, error } = await supabase.from("students").select(`*`).order('id', { ascending: false })
+  .ilike('nama',`%${keyword.value}%`)
+  if(data) students.value = data
+}
+
+const studentFiltered = computed(() => {
+  return students.value.filter((s) => {
+    return (
+      s.nama?.toLowerCase().includes(keyword.value.toLowerCase()) ||
+      s.sekolah?.toLowerCase().includes(keyword.value.toLowerCase())
+    )
+  })
+})
+
+onMounted(() => getStudent())
+
+
 definePageMeta({
     layout: 'admin',
     middleware: 'auth'
 })
-
 </script>
 
 <template>
     <div class="container">
-        <nuxt-link to="/data/form1">
-            <div class="btn  float-end mt-5 mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" >
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                </svg>
-            </div>
-        </nuxt-link>
-        <div class="btn  float-end mt-5 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" >
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-            </svg> search name
+        <div class="d-flex gap-4 mt-5 mb-4 float-end">
+            <form @submit.prevent="getStudent" class="input-group flex-nowrap rounded w-100 h-100">
+              <input v-model="keyword" type="search" class="form-control" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon" />
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+            </form>
+            <nuxt-link to="/data/form1">
+                <div class="btn  float-end mb-2">
+                    <i class="bi bi-plus-circle fs-4"></i>
+                </div>
+            </nuxt-link> 
         </div>
-       
         <table class="table mt-5">
             <thead class="thead-dark title">
                 <tr>
-                <th scope="col">No</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nomor Telepon</th>
+                    <th>Sekolah</th>
+                    <th>Jurusan</th>
+                    <th>Awal PKL</th>
+                    <th>Akhir PKL</th>
+                    <th>Penempatan</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <tr v-for="(student, i) in studentFiltered" :key="i">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ student.nama }}</td>
+                    <td>{{ student.nomor_telpon }}</td>
+                    <td>{{ student.sekolah }}</td>
+                    <td>{{ student.jurusan }}</td>
+                    <td>{{ student.tanggal_awal }}</td>
+                    <td>{{ student.tanggal_akhir }}</td>
+                    <td>{{ student.penempatan }}</td>
                 </tr>
             </tbody>
         </table>
