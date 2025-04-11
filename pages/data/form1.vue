@@ -40,8 +40,8 @@ definePageMeta({
         <!--contact-->
         <div class="row contact">
             <div class="col p-5">
-                <div class="card rounded-3">
-                    <div class="row justify-content-center">
+                <div class="card rounded-3 ">
+                    <div class="row justify-content-center mt-5">
                         <div class="col-md-5 p-5">
                             <div class="d-flex p-3">
                                 
@@ -85,7 +85,7 @@ definePageMeta({
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-5 mb-5">
                             <div class="card card-form">
                                 <div class="card-body">
                                     
@@ -112,7 +112,7 @@ h2, h5, h6, label, .btn, .contact h2 {
 .card-body {
   background: url('~/assets/background.jpg') no-repeat center center;
   background-size: cover;
-  height: 770px;
+  height: 900px;
   
 }
 
@@ -137,6 +137,7 @@ input, textarea, .card-form {
 
 .card {
     border: none;
+    border: 1px solid #BFDEEB;
 }
 
 

@@ -23,7 +23,7 @@ const setActive = (tab) => {
         </div>
         <div class="col-lg-4 col-md-9 col-sm-10 col-12 d-flex flex-column pt-3 text-start">
             <h4>PRESENSI PKL</h4>
-            <address>LP3i KOTA TASIKMALAYA</address>
+            <address>LP3I KOTA TASIKMALAYA</address>
         </div>
         </div>
     </div>

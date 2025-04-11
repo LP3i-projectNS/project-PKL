@@ -29,11 +29,11 @@ onMounted(() => getPresensi())
                 aria-describedby="search-addon" />
                 <input v-model="keyword" type="date">
             </form>
-            <nuxt-link to="/presensi">
+            <!-- <nuxt-link to="/presensi">
                 <div class="btn  float-end mb-2">
                     <i class="bi bi-plus-circle fs-4"></i>
                 </div>
-            </nuxt-link> 
+            </nuxt-link>  -->
         </div>
         <table class="table mt-5">
             <thead class="thead-dark title">

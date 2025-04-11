@@ -97,7 +97,7 @@ definePageMeta({
         <div class="row contact">
             <div class="col p-5">
                 <div class="card rounded-3">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mt-5">
                         <div class="col-md-5 p-5">
                             <div class="d-flex p-3">
                                 
@@ -108,7 +108,7 @@ definePageMeta({
                             </div>
                             <form @submit.prevent="submitForm" class="p-3">
                                 <div class="mb-3">
-                                    <label class="form-label">Nama Barang</label>
+                                    <label class="form-label">Nama</label>
                                     <input v-model="searchQuery" type="text" class="form-control" @focus="fetchStudent"
                                         @input="fetchStudent">
                                     <!-- Dropdown Hasil Pencarian -->
@@ -139,7 +139,7 @@ definePageMeta({
                             </form>
                         </div>
                         
-                        <div class="col-md-5">
+                        <div class="col-md-5 mb-5">
                             <div class="card card-form">
                                 <div class="card-body">
                                     
@@ -166,7 +166,7 @@ h2, h5, h6, label, .btn, .contact h2 {
 .card-body {
   background: url('~/assets/background.jpg') no-repeat center center;
   background-size: cover;
-  height: 770px;
+  height: 550px;
   
 }
 
@@ -191,6 +191,7 @@ input, textarea, .card-form {
 
 .card {
     border: none;
+    border: 1px solid #BFDEEB;
 }
 
 
